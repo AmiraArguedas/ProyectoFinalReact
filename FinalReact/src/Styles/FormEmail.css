@@ -1,0 +1,54 @@
+.Form{
+    background-color: rgb(245, 244, 244);
+    width: 70%;
+    align-self: center;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.inputFormNombre{
+    background-color: white;
+    width: 100px;
+    height: 20px;
+    color: black;
+    border: rgb(0, 0, 0) 1px solid;
+}
+
+.inputFormEmail{
+    background-color: white;
+    width: 300px;
+    height: 20px;
+    color: black;
+    border: rgb(0, 0, 0) 1px solid;
+}
+
+.inputFormMensaje{
+    background-color: white;
+    width: 350px;
+    height: 60px;
+    color: black;
+    border: rgb(0, 0, 0) 1px solid;
+}
+
+.divForm{
+    display: grid;
+    grid-template-columns: 500px 700px;
+}
+
+.divTexto{
+    text-align: center;
+    align-content: center;
+    font-size: larger;
+}
+
+.botonEnviarForm{
+    background-color: rgb(1, 88, 118);
+    padding: 10px;
+    border: 0.5px solid;
+    border-radius: 6px;
+    font-weight: bolder;
+    font-size: 100%;
+    margin: 2%;
+    margin-bottom: 20px;
+}
+

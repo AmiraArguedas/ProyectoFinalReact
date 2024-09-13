@@ -1,0 +1,50 @@
+
+
+.textoAlianzas{
+    font-size: larger;
+}
+
+.divCards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.card{
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    align-items: center;
+}
+
+.card-body{
+    background-color: rgb(148, 189, 61);
+}
+
+.CepiaFoto{
+    width: 60%;
+}
+
+.FoodBankFoto{
+    width: 60%;
+}
+
+.NosaraLabFoto{
+    width: 100%;
+}
+
+
+.CentroRadiologicoFoto{
+    width: 60%;
+ 
+}
+
+.PVMFoto{
+    width: 60%;
+}
+
+
+
+.textoLinkAliados{
+    color: rgb(1, 88, 118);
+}

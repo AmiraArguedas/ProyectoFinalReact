@@ -1,0 +1,19 @@
+.divInfoContacto{
+    background-color:white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 150px;
+}
+
+.cuadrosContact{
+    align-content: center;
+    height: 30%;
+}
+
+.textoContact{
+    font-size: larger;
+}
+
+.icono{
+    height: 90%;
+}
