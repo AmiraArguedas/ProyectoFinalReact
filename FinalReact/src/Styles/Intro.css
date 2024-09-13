@@ -1,0 +1,16 @@
+.imagenes{
+    height: 500px;
+    width: 750px;
+    border-radius: 50px;
+}
+
+
+.carousel-control-prev-icon{
+    background-color: rgba(159, 161, 161, 0.733);
+}
+
+.carousel-control-next-icon{
+    background-color: rgba(159, 161, 161, 0.733);
+}
+
+

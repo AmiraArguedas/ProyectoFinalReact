@@ -33,6 +33,7 @@
 .divForm{
     display: grid;
     grid-template-columns: 500px 700px;
+    margin-left: 50px;
 }
 
 .divTexto{
@@ -50,5 +51,6 @@
     font-size: 100%;
     margin: 2%;
     margin-bottom: 20px;
+    color: white;
 }
 

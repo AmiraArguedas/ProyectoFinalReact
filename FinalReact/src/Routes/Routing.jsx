@@ -6,6 +6,7 @@ import Services from '../Pages/Servicies';
 import Contact from "../Pages/Contact"
 import Alianzas from "../Pages/Alianzas"
 import Login from "../Pages/Login"
+import Register from '../Pages/Register';
 
 function Routing() {
   return (
@@ -18,6 +19,7 @@ function Routing() {
                 <Route path ="/Contact" element= {<Contact />} />
                 <Route path ="/Alianzas" element= {<Alianzas />} />
                 <Route path ="/Login" element= {<Login />} />
+                <Route path ="/Register" element= {<Register />} />
         </Routes>
     </Router>
     </div>

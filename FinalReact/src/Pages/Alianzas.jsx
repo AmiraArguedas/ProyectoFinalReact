@@ -8,6 +8,7 @@ function AlianzasEstrategicas() {
     <div>
         <Navbar />
         <Aliados />
+        <Footer />
     </div>
   )
 }

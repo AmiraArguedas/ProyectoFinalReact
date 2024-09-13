@@ -10,8 +10,6 @@ function Contact() {
 
 <hr />
     <br />
-    <h1>Página de contacto</h1>
-    <br />
             <p className='textoContact'>Si necesitas comunicarte directamente con nosotras, estos son nuestros canales de comunicación:</p>
 
 <br />

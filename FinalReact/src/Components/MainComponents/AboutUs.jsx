@@ -7,11 +7,8 @@ function AboutUs() {
     <div>
 <hr />
       <br />
-      <h1 className='h1AboutUs'>Página Acerca de Nosotros</h1>
-      <br />
       <div className='divAboutUs'>
             <div>
-            <h2 className='h2AboutUs'>Acerca de nosotros</h2>
                 <p className='textoAboutUs'>Somos dos mujeres comprometidas con la salud integral de la comunidad de Nosara. 
                   A través de nuestra consulta médica y servicios de quiropodia, nos enfocamos en ofrecer una atención de alta calidad, 
                   caracterizada por su calidez y humildad.</p>
@@ -26,6 +23,7 @@ function AboutUs() {
                 <img className='fotoConsultorio' src={fotoConsultorio} alt="" />
             </div>
       </div>
+<br />
 <br />
 <br />
             <div className='divTodaInfoValores'>
