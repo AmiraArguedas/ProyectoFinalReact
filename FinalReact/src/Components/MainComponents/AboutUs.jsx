@@ -26,41 +26,67 @@ function AboutUs() {
 <br />
 <br />
 <br />
-            <div className='divTodaInfoValores'>
 
-                        <h1 className='tituloValores'>Nuestros valores</h1>
+<div className='divTodaInfoValores'>
+
+      <h1 className='tituloValores'>Nuestros valores</h1>
               
-                  <div className='divValores'>
-                      <div>
+      <div className='divValores'>
+
+            <div>
+                        <div className='divValorIndividual'>
                             <p className='tituloValor'>Empatía</p>
                                   <p className='textoValor'>Comprender y compartir los sentimientos y preocupaciones de los pacientes, proporcionando un trato humano y comprensivo.</p>
+                        </div>                    
+                           
+                        <div className='divValorIndividual'>
                             <p className='tituloValor'>Compromiso de calidad</p>
                                   <p className='textoValor'>Ofrecer atención médica basada en las mejores prácticas y estándares clínicos para asegurar resultados óptimos para los pacientes.</p>
+                        </div>
+                           
+                        <div className='divValorIndividual'>
                             <p className='tituloValor'>Integridad</p>
                                   <p className='textoValor'> Actuar con honestidad y transparencia en todas las interacciones, tanto con los pacientes como con el personal.</p>
+                        </div>
+
+                        <div className='divValorIndividual'>
                             <p className='tituloValor'>Respeto</p>
                                   <p className='textoValor'>Valorar y tratar a cada paciente con dignidad, respetando su privacidad y autonomía en las decisiones sobre su salud.</p>
-                      </div>
-
-                      <div>
-                          <p className='tituloValor'>Confidencialidad</p>
-                                  <p className='textoValor'>Proteger la información personal y médica de los pacientes, garantizando que sus datos sean manejados de manera segura y privada.</p>
-                          <p className='tituloValor'>Responsabilidad</p>
-                                  <p className='textoValor'>Ser responsable en la toma de decisiones médicas y en la gestión del consultorio, asegurando que todas las acciones estén orientadas al bienestar del paciente.</p>
-                          <p className='tituloValor'>Innovación</p>
-                                  <p className='textoValor'> Mantenerse actualizado con los avances médicos y tecnológicos para mejorar continuamente la calidad de la atención.</p>
-                          <p className='tituloValor'>Educación y prevención</p>
-                                  <p className='textoValor'>Promover la educación del paciente y la prevención de enfermedades como parte integral de la atención médica.</p>
-                      </div>
-                      <br />
-                  </div>
+                        </div>
+                     
             </div>
 
+            <div>
+                        <div className='divValorIndividual'>
+                          <p className='tituloValor'>Confidencialidad</p>
+                                  <p className='textoValor'>Proteger la información personal y médica de los pacientes, garantizando que sus datos sean manejados de manera segura y privada.</p>
+                        </div>
+
+                        <div className='divValorIndividual'>
+                          <p className='tituloValor'>Responsabilidad</p>
+                                  <p className='textoValor'>Ser responsable en la toma de decisiones médicas y en la gestión del consultorio, asegurando que todas las acciones estén orientadas al bienestar del paciente.</p>
+                        </div>                    
+                         
+                        <div className='divValorIndividual'>
+                          <p className='tituloValor'>Innovación</p>
+                                  <p className='textoValor'> Mantenerse actualizado con los avances médicos y tecnológicos para mejorar continuamente la calidad de la atención.</p>
+                        </div>
+                          
+                        <div className='divValorIndividual'>
+                          <p className='tituloValor'>Educación y prevención</p>
+                                  <p className='textoValor'>Promover la educación del paciente y la prevención de enfermedades como parte integral de la atención médica.</p>
+                        </div>
+            </div>
+
+                      <br />
+      </div>
+</div> 
 
 
 
 
-    </div>
+
+    </div> 
   )
 }
 

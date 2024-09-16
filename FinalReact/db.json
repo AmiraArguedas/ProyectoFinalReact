@@ -1,8 +1,26 @@
 {
-    "usuarios": [
-     {   "id": "5fe2",
-        "username": "jjimenezmadr",
-        "password": "20282930"
+  "usuarios": [
+    {
+      "id": "5fe2",
+      "username": "jjimenezmadr",
+      "password": "20282930"
+    },
+    {
+      "id": "1259",
+      "username": "aarguedas",
+      "password": "1234"
     }
-    ]
+  ],
+  "pacientes": [
+    {
+      "id": "da65",
+      "NombrePaciente": "Amira Arguedas Jiménez",
+      "CedulaPaciente": "119840305",
+      "FechaNacimientoPaciente": "2006-11-29",
+      "SexoPaciente": "Femenino",
+      "TelefonoPaciente": "84270649",
+      "ConsultaPaciente": "Consulta General",
+      "NotasPaciente": "Prueba 1"
+    }
+  ]
 }

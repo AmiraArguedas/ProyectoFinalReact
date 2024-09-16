@@ -40,14 +40,11 @@ function Login() {
      for (let index = 0; index < users.length; index++) {
         if (users[index].username === username && users[index].password === password) {
           console.log("Iniciaste sesión");
-          navigate("/Register")
+          navigate("/Admin")
         }else{
           console.log("No estás autorizado");
-          
         }
-        
       }
-
     }
 
 

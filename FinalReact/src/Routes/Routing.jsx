@@ -7,6 +7,8 @@ import Contact from "../Pages/Contact"
 import Alianzas from "../Pages/Alianzas"
 import Login from "../Pages/Login"
 import Register from '../Pages/Register';
+import Expediente from '../Pages/Expediente';
+import Admin from '../Pages/Admin';
 
 function Routing() {
   return (
@@ -20,6 +22,8 @@ function Routing() {
                 <Route path ="/Alianzas" element= {<Alianzas />} />
                 <Route path ="/Login" element= {<Login />} />
                 <Route path ="/Register" element= {<Register />} />
+                <Route path ="/Expediente" element= {<Expediente />} />
+                <Route path ="/Admin" element= {<Admin />} />
         </Routes>
     </Router>
     </div>
