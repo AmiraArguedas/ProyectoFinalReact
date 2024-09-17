@@ -21,6 +21,39 @@
       "TelefonoPaciente": "84270649",
       "ConsultaPaciente": "Consulta General",
       "NotasPaciente": "Prueba 1"
+    },
+    {
+      "id": "7505",
+      "NombrePaciente": "Miguel Arguedas Arce",
+      "CedulaPaciente": "109470568",
+      "FechaNacimientoPaciente": "1976-08-30",
+      "SexoPaciente": "Masculino",
+      "TelefonoPaciente": "88608444",
+      "ConsultaPaciente": "Quiropodia",
+      "NotasPaciente": "Prueba 2"
+    },
+    {
+      "id": "fe41",
+      "NombrePaciente": "Emel Mayorga López",
+      "CedulaPaciente": "504620603",
+      "FechaNacimientoPaciente": "2024-07-24",
+      "SexoPaciente": "Masculino",
+      "TelefonoPaciente": "61641467",
+      "ConsultaPaciente": "Consulta General",
+      "NotasPaciente": "Prueba 3",
+      "AntecedentesMedicosPersonales": "No indica",
+      "AntecedentesMedicosFamiliares": "No indica",
+      "NotasAntecedentesMedicos": "NO",
+      "MotivoConsulta": "Dolor de estómago",
+      "PresionArterial": "120 / 80",
+      "FrecuenciaCardiaca": "80",
+      "FrecuenciaRespiratoria": "80",
+      "Temperatura": "36",
+      "NotasExamenFisico": "NO",
+      "Diagnostico": "Problemas gastrointestinales",
+      "MedicamentosPrescritos": "Famotidina 40mg",
+      "TratamientosRecomendados": "NO",
+      "NotasTratamiento": "NO"
     }
   ]
 }

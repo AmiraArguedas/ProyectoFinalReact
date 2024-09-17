@@ -1,4 +1,4 @@
-async function PostPacientes(NombrePaciente, CedulaPaciente, FechaNacimientoPaciente, SexoPaciente, TelefonoPaciente, ConsultaPaciente, NotasPaciente) {
+async function PostPacientes(NombrePaciente, CedulaPaciente, FechaNacimientoPaciente, SexoPaciente, TelefonoPaciente, ConsultaPaciente, NotasPaciente, AntecedentesMedicosPersonales, AntecedentesMedicosFamiliares, NotasAntecedentesMedicos, MotivoConsulta, PresionArterial, FrecuenciaCardiaca, FrecuenciaRespiratoria, Temperatura, NotasExamenFisico, Diagnostico, MedicamentosPrescritos, TratamientosRecomendados, NotasTratamiento) {
     const userData={
         NombrePaciente, 
         CedulaPaciente,
@@ -6,7 +6,20 @@ async function PostPacientes(NombrePaciente, CedulaPaciente, FechaNacimientoPaci
         SexoPaciente,
         TelefonoPaciente, 
         ConsultaPaciente,
-        NotasPaciente
+        NotasPaciente,
+        AntecedentesMedicosPersonales,
+        AntecedentesMedicosFamiliares,
+        NotasAntecedentesMedicos,
+        MotivoConsulta,
+        PresionArterial,
+        FrecuenciaCardiaca,
+        FrecuenciaRespiratoria,
+        Temperatura,
+        NotasExamenFisico,
+        Diagnostico,
+        MedicamentosPrescritos,
+        TratamientosRecomendados,
+        NotasTratamiento
     }
     try {
         // Realiza una solicitud POST a la URL especificada
