@@ -3,10 +3,11 @@ import "../../Styles/Expediente.css"
 import { useEffect, useState } from 'react';
 import obtenerPacientes from "../../Services/getPacientes"
 import PostPacientes from '../../Services/postPacientes';
+import  {DeletePaciente}  from '../../Services/deletePacientes';
+import UpdatePaciente from '../../Services/putPacientes';
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-
 
 function ExpedienteMedico() {
 
@@ -30,8 +31,15 @@ function ExpedienteMedico() {
         const [MedicamentosPrescritos, setMedicamentosPrescritos] = useState(''); // 
         const [TratamientosRecomendados, setTratamientosRecomendados] = useState(''); // 
         const [NotasTratamiento, setNotasTratamiento] = useState(''); // 
+        const [DatoBase64, setBase64] = useState('');
 
-        const [pacientes, setPacientes] = useState([]); //
+        // Controla la funcionalidad de los botones de abrir y cerrar modal
+        const [show, setShow] = useState(false);
+        const handleShow = () =>  setShow(true);
+        const handleClose = () => setShow(false);
+
+        const [cargaPac, setCargaPaci] = useState([])
+        const [pacientes, setPacientes] = useState([]); // 
         
     useEffect(() => { //
         const fetchUsers = async () => { //
@@ -44,7 +52,7 @@ function ExpedienteMedico() {
       }, []); //
     
         function cargaNombrePaciente(event) { //captura los datos
-          setNombrePaciente(event.target.value); //
+                setNombrePaciente(event.target.value); //
         }
     
         function cargaCedulaPaciente(event) { //
@@ -68,7 +76,7 @@ function ExpedienteMedico() {
                }
 
         function cargaConsultaPaciente(event) { //captura los datos
-                setConsultaPaciente(event.target.value); // kkkkkkkkkkkkkkkkkkkkkkkkkk
+                setConsultaPaciente(event.target.value); // 
         }
 
         function cargaAntecedentesMedicosPersonales(event) { //captura los datos
@@ -123,8 +131,6 @@ function ExpedienteMedico() {
                 setNotasTratamiento(event.target.value); //
         }
 
-
-
         const botonGuardarPaciente = () => {
 
         const EncontrarCedula = pacientes.some(paciente => paciente.CedulaPaciente === CedulaPaciente);
@@ -136,25 +142,98 @@ function ExpedienteMedico() {
                         if (EncontrarCedula === false) {
                                 console.log("paciente registrado exitosamente");
                                 
-                                PostPacientes(NombrePaciente, CedulaPaciente, FechaNacimientoPaciente, SexoPaciente, TelefonoPaciente, ConsultaPaciente, NotasPaciente, AntecedentesMedicosPersonales, AntecedentesMedicosFamiliares, NotasAntecedentesMedicos, MotivoConsulta, PresionArterial, FrecuenciaCardiaca, FrecuenciaRespiratoria, Temperatura, NotasExamenFisico, Diagnostico, MedicamentosPrescritos, TratamientosRecomendados, NotasTratamiento)
+                                PostPacientes(NombrePaciente, CedulaPaciente, FechaNacimientoPaciente, SexoPaciente, TelefonoPaciente, ConsultaPaciente, NotasPaciente, AntecedentesMedicosPersonales, AntecedentesMedicosFamiliares, NotasAntecedentesMedicos, MotivoConsulta, PresionArterial, FrecuenciaCardiaca, FrecuenciaRespiratoria, Temperatura, NotasExamenFisico, Diagnostico, MedicamentosPrescritos, TratamientosRecomendados, NotasTratamiento, DatoBase64)
                         }   
                 }
         }
 
-        const botonEliminarPaciente = () =>{
-                console.log("clickeaste");
+        const inputArchivo = (archivos)=>{
+                Array.from(archivos).forEach(archivo=>{
+                        const reader = new FileReader();
+                        reader.readAsDataURL(archivo);
+                        reader.onload = function(){
+                                const base64 = reader.result;
+                                setBase64(base64)
+                        }
+                })
         }
 
-
-        // Controla la funcionalidad de los botones de abrir y cerrar modal
-        const [show, setShow] = useState(false);
-        const handleShow = () => setShow(true);
-        const handleClose = () => setShow(false);
-
-        const botonModificarInfo = () => {
-                console.log("Has editado el contenido");
+        const botonEliminarPaciente = (pacientesId) =>{
+                console.log("eliminaste al paciente");
+                console.log(pacientesId);
                 
+               DeletePaciente(pacientesId)
         }
+
+        const botonModificarInfo = (cargaPac) => {
+                console.log(cargaPac);
+              
+                const idModificar = cargaPac[0].id
+                console.log(idModificar);             
+
+           UpdatePaciente(idModificar, 
+                cargaPac[0].NombrePaciente, 
+                cargaPac[0].CedulaPaciente, 
+                cargaPac[0].FechaNacimientoPaciente,
+                cargaPac[0].SexoPaciente, 
+                cargaPac[0].TelefonoPaciente, 
+                cargaPac[0].ConsultaPaciente, cargaPac[0].NotasPaciente,
+                 cargaPac[0].AntecedentesMedicosPersonales, 
+                cargaPac[0].AntecedentesMedicosFamiliares,
+                cargaPac[0].NotasAntecedentesMedicos, 
+                cargaPac[0].MotivoConsulta, 
+                cargaPac[0].PresionArterial,
+                cargaPac[0].FrecuenciaCardiaca, 
+                cargaPac[0].FrecuenciaRespiratoria, 
+                cargaPac[0].Temperatura, 
+                cargaPac[0].NotasExamenFisico, 
+                cargaPac[0].Diagnostico, 
+                cargaPac[0].MedicamentosPrescritos, 
+                cargaPac[0].TratamientosRecomendados, 
+                cargaPac[0].NotasTratamiento, 
+                cargaPac[0].DatoBase64)
+        }
+
+        function cargarPac(pacienteId) { // paciente, trae el ID de cada  
+                
+                const filtroMod = pacientes.filter(paciente => paciente.id === pacienteId)
+                setCargaPaci(filtroMod)
+
+                handleShow()            
+        }
+
+        const onChangeNombrePaciente = (event) => { // actualica solo el campo correspondiente
+                console.log(event.target.value);
+                };
+
+        const onChangeCedulaPaciente = (event) => {
+                console.log(event.target.value);
+        }
+
+        const onChangeFechaNacimientoPaciente = (event) => {
+                console.log(event.target.value);
+        }
+
+        const onChangeSexo = (event) => {
+                console.log(event.target.value);
+        }
+
+        
+        const onChangeTelefonoPaciente = (event) => {
+                console.log(event.target.value);
+        }
+
+        
+        const onChangeConsultaPaciente = (event) => {
+                console.log(event.target.value);
+        }
+
+        
+        const onChangeNotasPaciente = (event) => {
+                console.log(event.target.value);
+        }
+
+
 
 
   return (
@@ -227,7 +306,7 @@ function ExpedienteMedico() {
                 <input value={Temperatura} onChange={cargaTemperatura} type="number" placeholder='Temperatura'/>
 
                 <span>Adjuntar exámenes o imágenes</span>
-                <input type="file"/>
+                <input onChange={(e)=>inputArchivo(e.target.files)} type="file"/>
 
                 <span>Notas:</span>
                 <textarea value={NotasExamenFisico} onChange={cargaNotasExamenFisico} placeholder='Notas'></textarea>
@@ -256,8 +335,9 @@ function ExpedienteMedico() {
               <h4>Pacientes registrados</h4>
 
                         {pacientes.map((pacientes) => (
-                        <p key={pacientes.id}>{pacientes.CedulaPaciente} {pacientes.NombrePaciente} <Button variant="primary" onClick={handleShow}>Editar</Button> <button onClick={botonEliminarPaciente}>ELIMINAR</button></p>
-
+                        <p key={pacientes.id}>{pacientes.CedulaPaciente} {pacientes.NombrePaciente} 
+                        <Button variant="primary" onClick={e=>cargarPac(pacientes.id)}>Editar</Button> 
+                        <button onClick={e => botonEliminarPaciente(pacientes.id)}>ELIMINAR</button></p>
                         ))}
 
 <hr />
@@ -277,53 +357,100 @@ function ExpedienteMedico() {
           <Modal.Body>
               <div>
 
-
+              <h5>Datos personales</h5>
               <span>Nombre del paciente</span>
-              <input value={NombrePaciente} onChange={cargaNombrePaciente} type="text" placeholder='Nombre del paciente'/>
+              <input defaultValue={cargaPac[0]?.NombrePaciente}  onChange={onChangeNombrePaciente} type="text" placeholder='Nombre del paciente'/>
 <br />
               <span>Número de identificación</span>
-              <input value={CedulaPaciente} onChange={cargaCedulaPaciente} type="text" placeholder='Número de identificación'/>
+              <input defaultValue={cargaPac[0]?.CedulaPaciente} onChange={onChangeCedulaPaciente} type="text" placeholder='Número de identificación'/>
 <br />
               <span>Fecha de nacimiento</span>
-              <input value={FechaNacimientoPaciente} onChange={cargaFechaNacimientoPaciente} type="date"/>
+              <input defaultValue={cargaPac[0]?.FechaNacimientoPaciente} onChange={onChangeFechaNacimientoPaciente} type="date"/>
 <br />
               <span>Sexo</span>
-                  <select value={SexoPaciente} onChange={cargaSexo}>
+                  <select defaultValue={cargaPac[0]?.SexoPaciente} onChange={onChangeSexo}>
                         <option value="">Seleccionar</option>
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
                   </select>
 <br />
               <span>Número de teléfono</span>
-              <input value={TelefonoPaciente} onChange={cargaTelefonoPaciente} type="number" placeholder='Número de teléfono'/>
+              <input defaultValue={cargaPac[0]?.TelefonoPaciente} onChange={onChangeTelefonoPaciente} type="number" placeholder='Número de teléfono'/>
 <br />
               <span>Cita</span>
-                <select value={ConsultaPaciente} onChange={cargaConsultaPaciente}>
+                <select defaultValue={cargaPac[0]?.ConsultaPaciente} onChange={onChangeConsultaPaciente}>
                         <option value="">Seleccionar</option>
                         <option value="Quiropodia">Quiropodia</option>
                         <option value="Consulta General">Consulta General</option>
                 </select>
 <br />
               <span>Notas:</span>
-              <textarea value={NotasPaciente} onChange={cargaNotasPaciente} name="message" placeholder='Dirección'/>
+              <textarea defaultValue={cargaPac[0]?.NotasPaciente} onChange={onChangeNotasPaciente} name="message" placeholder='Dirección'/>
+<br />
+<br />
+              <h5>Antecedentes médicos</h5>
+<br />
+                <span>Personales</span>
+                <textarea defaultValue={cargaPac[0]?.AntecedentesMedicosPersonales} onChange={cargaAntecedentesMedicosPersonales} placeholder='Antecedentes médicos personales'></textarea>
+<br />
+                <span>Familiares</span>
+                <textarea defaultValue={cargaPac[0]?.AntecedentesMedicosFamiliares} onChange={cargaAntecedentesMedicosFamiliares} placeholder='Antecedentes médicos familiares'></textarea>
+<br />
+                <span>Notas:</span>
+                <textarea defaultValue={cargaPac[0]?.NotasAntecedentesMedicos} onChange={cargaNotasAntecedentesMedicos} placeholder='Notas:'></textarea>
+<br />
+<br />
+                <h5>Consulta médica</h5>
 
+                <span>Motivos de la consulta</span>
+                <textarea defaultValue={cargaPac[0]?.MotivoConsulta} onChange={cargaMotivoConsulta} placeholder='Motivos de la consulta'></textarea>
+<br />
+                <h6>Signos y Exámen Físico</h6>
+
+                <span>Presión arterial</span>
+                <input defaultValue={cargaPac[0]?.PresionArterial} onChange={cargaPresionArterial} type="text" placeholder='Presión arterial'/>
+<br />
+                <span>Frecuencia cardiaca</span>
+                <input defaultValue={cargaPac[0]?.FrecuenciaCardiaca} onChange={cargaFrecuenciaCardiaca} type="number" placeholder='Frecuencia respiratoria'/>
+<br />
+                <span>Frecuencia respiratoria</span>
+                <input defaultValue={cargaPac[0]?.FrecuenciaRespiratoria} onChange={cargaFrecuenciaRespiratoria} type="number" placeholder='Frecuencia cardiaca'/>
+<br />
+                <span>Temperatura</span>
+                <input defaultValue={cargaPac[0]?.Temperatura} onChange={cargaTemperatura} type="number" placeholder='Temperatura'/>
+<br />
+                <span>Adjuntar exámenes o imágenes</span>
+                <input onChange={(e)=>inputArchivo(e.target.files)} type="file"/>
+<br />
+                <span>Notas:</span>
+                <textarea defaultValue={cargaPac[0]?.NotasExamenFisico} onChange={cargaNotasExamenFisico} placeholder='Notas'></textarea>
+<br />
+<br />
+                <h5>Diagnóstico</h5>
+<br />
+                <textarea defaultValue={cargaPac[0]?.Diagnostico} onChange={cargaDiagnostico} placeholder='Diagnóstico médico'></textarea>
+<br />
+<br />
+                <h5>Tratamiento</h5>
+                <span>Medicamentos prescritos</span>
+                <textarea defaultValue={cargaPac[0]?.MedicamentosPrescritos} onChange={cargaMedicamentosPrescritos} placeholder='Medicamentos recetados (dosis y frecuencia)'></textarea>
+<br />
+                <span>Tratamiento recomendados</span>
+                <textarea defaultValue={cargaPac[0]?.TratamientosRecomendados} onChange={cargaTratamientosRecomendados} placeholder='Tratamiento recomendados / sugeridos'></textarea>
+<br />
+                <span>Notas:</span>
+                <textarea defaultValue={cargaPac[0]?.NotasTratamiento} onChange={cargaNotasTratamiento} placeholder='Notas'></textarea>
 
               </div>
           </Modal.Body>
 
           <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>Cerrar</Button>
-                <Button variant="primary" onClick={botonModificarInfo}>Guardar</Button>
+                <Button variant="primary" onClick={e => {botonModificarInfo(cargaPac)}}>Guardar</Button>
           </Modal.Footer>
 
       </Modal>
     </div>
-  
-
-
-
-
-
 
 </div>
   )

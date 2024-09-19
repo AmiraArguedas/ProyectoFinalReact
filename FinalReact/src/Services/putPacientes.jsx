@@ -1,5 +1,6 @@
-async function PostPacientes(NombrePaciente, CedulaPaciente, FechaNacimientoPaciente, SexoPaciente, TelefonoPaciente, ConsultaPaciente, NotasPaciente, AntecedentesMedicosPersonales, AntecedentesMedicosFamiliares, NotasAntecedentesMedicos, MotivoConsulta, PresionArterial, FrecuenciaCardiaca, FrecuenciaRespiratoria, Temperatura, NotasExamenFisico, Diagnostico, MedicamentosPrescritos, TratamientosRecomendados, NotasTratamiento, DatoBase64) {
-    const userData={
+async function UpdatePaciente(idModificar, NombrePaciente, CedulaPaciente, FechaNacimientoPaciente, SexoPaciente, TelefonoPaciente, ConsultaPaciente, NotasPaciente, AntecedentesMedicosPersonales, AntecedentesMedicosFamiliares, NotasAntecedentesMedicos, MotivoConsulta, PresionArterial, FrecuenciaCardiaca, FrecuenciaRespiratoria, Temperatura, NotasExamenFisico, Diagnostico, MedicamentosPrescritos, TratamientosRecomendados, NotasTratamiento, DatoBase64){
+    const actualizacion={
+    
         NombrePaciente, 
         CedulaPaciente,
         FechaNacimientoPaciente,
@@ -24,12 +25,12 @@ async function PostPacientes(NombrePaciente, CedulaPaciente, FechaNacimientoPaci
     }
     try {
         // Realiza una solicitud POST a la URL especificada
-        const response = await fetch('http://localhost:3003/pacientes', {
-            method: 'POST', // Especifica que se está utilizando el método POST
+        const response = await fetch(`http://localhost:3003/pacientes/${idModificar}`, {
+            method: 'PUT', // Especifica que se está utilizando el método POST
             headers: {
                 'Content-Type': 'application/json' // Indica que los datos se envían en formato JSON. en este apartado tambien se pueden enviar tokens
             },
-            body: JSON.stringify(userData) // Convierte el objeto newUser a JSON para enviarlo en el cuer
+            body: JSON.stringify(actualizacion) // Convierte el objeto newUser a JSON para enviarlo en el cuer
         });
 
         // Espera la respuesta en formato JSON
@@ -38,7 +39,6 @@ async function PostPacientes(NombrePaciente, CedulaPaciente, FechaNacimientoPaci
         return data; /// siempre hay que ponerlo 
     } catch (error) {
         // Captura y muestra cualquier error que ocurra durante la solicitud
-        console.error(error);
     }
 }
-export default PostPacientes;
+export default UpdatePaciente;

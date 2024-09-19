@@ -48,3 +48,18 @@
 .textoLinkAliados{
     color: rgb(1, 88, 118);
 }
+
+
+@media (min-width : 480px) and (max-width : 900px) {
+    .divCards{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 80%;
+        align-items: center;
+    }
+
+    .textoAlianzas{
+        width: 80%;
+        margin: 4%;
+    }
+}

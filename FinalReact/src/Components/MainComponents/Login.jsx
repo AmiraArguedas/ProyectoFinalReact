@@ -64,15 +64,15 @@ function Login() {
         <br />
         <span>Nombre de Usuario</span>
         <br />
-        <input value={username} onChange={cargaUsername} type="text" name="" id="" />
+        <input className='inputLogin' value={username} onChange={cargaUsername} type="text" name="" id="" />
         <br />
         <br />
         <span>Contraseña</span>
         <br />
-        <input value={password} onChange={cargaPassword} type="password" name="" id="" />
+        <input className='inputLogin' value={password} onChange={cargaPassword} type="password" name="" id="" />
         <br />
         <br />
-        <button onClick={botonIniciarSesion}>Iniciar Sesión</button>
+        <button className='botonLogin' onClick={botonIniciarSesion}>Iniciar Sesión</button>
         <br />
         <br />
         <br />

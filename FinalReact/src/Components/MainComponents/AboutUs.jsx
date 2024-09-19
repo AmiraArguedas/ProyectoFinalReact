@@ -25,7 +25,6 @@ function AboutUs() {
       </div>
 <br />
 <br />
-<br />
 
 <div className='divTodaInfoValores'>
 

@@ -50,3 +50,53 @@
 .divValorIndividual{
     width: 90%;
 }
+
+
+
+
+
+@media (min-width : 0px) and (max-width : 480px) {
+        .divAboutUs{
+            background-color: cyan;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            width: 100%;
+            align-content: center;
+            align-items: center;
+        }
+
+        .divValores{
+            display: grid;
+            grid-template-columns: 1fr;
+
+        }
+
+        .divTodaInfoValores{
+            width: 95%;
+            align-content: center;
+            align-items: center;
+        }
+}
+
+@media (min-width : 480px) and (max-width : 900px) {
+        .divAboutUs{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            width: 100%;
+            align-content: center;
+            align-items: center;
+        }
+
+        .divValores{
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .divTodaInfoValores{
+            width: 95%;
+            margin-left: 20px;
+        }
+}
+

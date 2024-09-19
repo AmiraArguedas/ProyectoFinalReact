@@ -1,7 +1,7 @@
 .imagenes{
     height: 500px;
     width: 750px;
-    border-radius: 50px;
+    border-radius: 10%;
 }
 
 
@@ -11,6 +11,35 @@
 
 .carousel-control-next-icon{
     background-color: rgba(159, 161, 161, 0.733);
+}
+
+
+
+@media (min-width : 0px) and (max-width : 480px) {
+    #carouselExampleControlsNoTouching{
+        background-color: chartreuse;
+        height: 80%;
+        width: 80%;
+    }
+
+    .imagenes{
+        height: 80%;
+        width: 80%;
+        border-radius: 5%;
+    }
+}
+
+@media (min-width : 480px) and (max-width : 900px) {
+    #carouselExampleControlsNoTouching{
+        height: 100%;
+        width: 100%;
+    }
+
+    .imagenes{
+        height: 80%;
+        width: 80%;
+        border-radius: 10%;
+    }
 }
 
 

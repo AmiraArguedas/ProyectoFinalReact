@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import obtenerUsuarios from "../../Services/getUsers"
 import PostUsuarios from "../../Services/postUsers"
+import "../../Styles/Register.css"
 
 function Registro() {
 
@@ -48,15 +49,26 @@ function Registro() {
 
   return (
     <div>
-        <h1>Registro</h1>
-
-      <span>Nombre de usuario</span>
-      <input value={username} onChange={cargaUsername} type="text"/>
-      <span>Contraseña</span>
-      <input value={password} onChange={cargaPassword} type="text"/>
-      <button onClick={botonRegistrar}>Registrar usuario</button>
-
-
+      <br />
+      <br />
+        <div className='divRegister'>
+            <br />
+            <h1>Registro</h1>
+            <br />
+            <span>Nombre de usuario</span>
+            <br />
+            <input className='inputRegister' value={username} onChange={cargaUsername} type="text"/>
+            <br />
+            <br />
+            <span>Contraseña</span>
+            <br />
+            <input className='inputRegister'value={password} onChange={cargaPassword} type="text"/>
+            <br />
+            <br />
+            <button className='botonRegister' onClick={botonRegistrar}>Registrar usuario</button>
+            <br />
+            <br />
+        </div>
     </div>
   )
 }

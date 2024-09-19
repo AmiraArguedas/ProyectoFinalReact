@@ -16,14 +16,16 @@ function Navbar() {
       </div>
 
               <div className='divPaginas'>
-                    <p><Link to="/" className='textoLink'>Main</Link></p>
-                    <p><Link to= "/AboutUs" className='textoLink'>Acerca de nosotros</Link></p>
-                    <p><Link to= "/Services" className='textoLink'>Servicios</Link></p>
-                    <p><Link to= "/Contact" className='textoLink'>Contacto</Link></p>
-                    <p><Link to= "/Alianzas" className='textoLink'>Alianzas</Link></p>
-                    <p><Link to= "/Login"className='textoLink'>Iniciar Sesión</Link></p>
+                    <div><Link to="/" className='textoLink'>Main</Link></div>
+                    <div><Link to= "/AboutUs" className='textoLink'>Acerca de nosotros</Link></div>
+                    <div><Link to= "/Services" className='textoLink'>Servicios</Link></div>
+                    <div><Link to= "/Contact" className='textoLink'>Contacto</Link></div>
+                    <div><Link to= "/Alianzas" className='textoLink'>Alianzas</Link></div>
+                    <div><Link to= "/Login"className='textoLink'>Iniciar Sesión</Link></div>
               </div>
         </div>
+        <br />
+
   </div>
   )
 }
