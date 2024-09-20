@@ -3,6 +3,7 @@ import "../../Styles/Login.css"
 import { useEffect, useState } from 'react';
 import obtenerUsuarios from "../../Services/getUsers"
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 function Login() {
 
@@ -39,10 +40,21 @@ function Login() {
     const botonIniciarSesion = () => {
      for (let index = 0; index < users.length; index++) {
         if (users[index].username === username && users[index].password === password) {
+          localStorage.setItem("Autenticado", "true")
           console.log("Iniciaste sesión");
           navigate("/Admin")
+
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Iniciaste sesión",
+            showConfirmButton: false,
+            timer: 1500
+          });
+
         }else{
           console.log("No estás autorizado");
+          
         }
       }
     }
@@ -64,12 +76,12 @@ function Login() {
         <br />
         <span>Nombre de Usuario</span>
         <br />
-        <input className='inputLogin' value={username} onChange={cargaUsername} type="text" name="" id="" />
+        <input className='inputLogin' value={username} onChange={cargaUsername} type="text"/>
         <br />
         <br />
         <span>Contraseña</span>
         <br />
-        <input className='inputLogin' value={password} onChange={cargaPassword} type="password" name="" id="" />
+        <input className='inputLogin' value={password} onChange={cargaPassword} type="password"/>
         <br />
         <br />
         <button className='botonLogin' onClick={botonIniciarSesion}>Iniciar Sesión</button>

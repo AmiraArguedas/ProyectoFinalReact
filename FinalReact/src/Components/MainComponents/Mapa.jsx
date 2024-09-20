@@ -4,7 +4,7 @@ const Mapa = ({
   height = "450"
 }) => {
   return (
-    <div style={{ overflow: 'hidden', position: 'relative', width, height }}>
+    <div style={{ overflow: 'hidden', width: "100%", height }}>
       <br />
       <iframe
         src={src}

@@ -9,6 +9,8 @@ import Login from "../Pages/Login"
 import Register from '../Pages/Register';
 import Expediente from '../Pages/Expediente';
 import Admin from '../Pages/Admin';
+import Historial from '../Pages/Historial';
+import ProtectedRoutes from "../Routes/ProtectedRoutes"
 
 function Routing() {
   return (
@@ -21,9 +23,10 @@ function Routing() {
                 <Route path ="/Contact" element= {<Contact />} />
                 <Route path ="/Alianzas" element= {<Alianzas />} />
                 <Route path ="/Login" element= {<Login />} />
-                <Route path ="/Register" element= {<Register />} />
-                <Route path ="/Expediente" element= {<Expediente />} />
-                <Route path ="/Admin" element= {<Admin />} />
+                <Route path ="/Register" element= {<ProtectedRoutes><Register /></ProtectedRoutes> } />
+                <Route path ="/Expediente" element= {<ProtectedRoutes><Expediente /></ProtectedRoutes> } />
+                <Route path ="/Admin" element= {<ProtectedRoutes><Admin /></ProtectedRoutes> } />
+                <Route path ="/Historial" element= {<ProtectedRoutes><Historial /></ProtectedRoutes> } />
         </Routes>
     </Router>
     </div>

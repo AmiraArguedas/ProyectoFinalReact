@@ -36,6 +36,9 @@ function Registro() {
         for (let index = 0; index < users.length; index++) {
             if (users[index].username === username) {
               console.log("Usuario ya existente");
+
+              
+
             }else{
               if (username.trim() === "" || password.trim() === "") {
                 console.log("No se permiten espacios vacios");

@@ -26,32 +26,24 @@ return (
 
     <div className='divForm'>
         <div className='divTexto'>
-            <p>Puedes contactarnos a través de los números de teléfono 
-                <br />
-                que se muestran en la parte superior o
-                <br />
-                envianos tu duda a través de este formulario:</p>
+            <p>Puedes contactarnos a través de los números de teléfono que se muestran en la parte superior o envianos tu duda a través de este formulario:</p>
+        <br />
         </div>
+
                 <div>
                 <form className='Form' ref={form} onSubmit={sendEmail}>
-                    <br />
-<br />
-                    <h2>Formulario de Contacto</h2>
-                        <p>Nombre</p>
+                    <h2 className='tituloForm'>Formulario de Contacto</h2>
+                        <p className='textoForm'>Nombre</p>
                         <input className='inputFormNombre' type="text"/>
-<br />
-<br />
-                        <p>Correo Electrónico</p>
+
+                        <p className='textoForm'>Correo Electrónico</p>
                         <input className='inputFormEmail' type="email"/>
-<br />
-<br />
-                        <p>Mensaje</p>
+
+                        <p className='textoForm'>Mensaje</p>
                         <textarea className='inputFormMensaje' name="message" />
-                        <br />
-                        <br />
+<br />
                         <input className='botonEnviarForm' type="submit" value="ENVIAR" />
-                    <br />
-                    <br />
+
                 </form>
                 </div>
     </div>
