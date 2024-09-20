@@ -42,7 +42,7 @@ function Login() {
         if (users[index].username === username && users[index].password === password) {
           localStorage.setItem("Autenticado", "true")
           console.log("Iniciaste sesión");
-          navigate("/Admin")
+          navigate("/Expediente")
 
           Swal.fire({
             position: "center",

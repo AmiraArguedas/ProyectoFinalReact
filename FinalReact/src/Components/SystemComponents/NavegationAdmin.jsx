@@ -24,9 +24,12 @@ function NavegationAdmin() {
 
       <ul className="nav nav-pills">
 
-      <img className='logoQuiroLily' src={LogoQuiroLily} alt="Logo Quiro Lily" />
-      <img className='logoCentroMedico' src={LogoCMN} alt="Logo Centro Medico" />
-        
+      <div className='divImagenes'>
+            <img className='logoQuiroLily' src={LogoQuiroLily} alt="Logo Quiro Lily" />
+            <img className='logoCentroMedico' src={LogoCMN} alt="Logo Centro Medico" />
+      </div>
+
+      <div className='divLinks'>
             <li className="nav-item">
                 <p className="nav-link" ><Link to= "/Register">Registro</Link></p>
             </li>
@@ -42,9 +45,11 @@ function NavegationAdmin() {
             <li className="nav-item">
               <button className='botonCerrarSesionAdmin' onClick={botonCerrarSesion}>Cerrar Sesión</button>
             </li>
+        </div>
+
       </ul>
 
-
+      <hr />
     </div>
   )
 }

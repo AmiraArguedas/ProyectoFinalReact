@@ -8,7 +8,6 @@ import Alianzas from "../Pages/Alianzas"
 import Login from "../Pages/Login"
 import Register from '../Pages/Register';
 import Expediente from '../Pages/Expediente';
-import Admin from '../Pages/Admin';
 import Historial from '../Pages/Historial';
 import ProtectedRoutes from "../Routes/ProtectedRoutes"
 
@@ -25,7 +24,6 @@ function Routing() {
                 <Route path ="/Login" element= {<Login />} />
                 <Route path ="/Register" element= {<ProtectedRoutes><Register /></ProtectedRoutes> } />
                 <Route path ="/Expediente" element= {<ProtectedRoutes><Expediente /></ProtectedRoutes> } />
-                <Route path ="/Admin" element= {<ProtectedRoutes><Admin /></ProtectedRoutes> } />
                 <Route path ="/Historial" element= {<ProtectedRoutes><Historial /></ProtectedRoutes> } />
         </Routes>
     </Router>
