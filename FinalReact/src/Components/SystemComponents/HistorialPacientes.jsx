@@ -1,38 +1,44 @@
-import React from 'react'
+import React from 'react';
 import { useEffect, useState } from 'react';
 import obtenerHistorialPacientes from '../../Services/getHistorial';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "../../Styles/HistorialPacientes.css";
 
 function HistorialPacientes() {
 
-    const [Buscador, setBuscador] = useState('');
-    const [HistorialPacientes, setHistorialPacientes] = useState([]); 
+    // input para buscar (tipo search)
+    const [Buscador, setBuscador] = useState(''); // se inicializa "Buscador" como vacio (el input está vacio) y "setBuscador" es la funcion para poder actualizar a "Buscador"
+    
+    //lista para guardar historial
+    const [HistorialPacientes, setHistorialPacientes] = useState([]); //"setHistorialPacientes" es la función que se usará para actualizar el valor de "HistorialPacientes" que se inicia como una lista vacia 
     
 
     useEffect(() => { // mantiene el control, evita que se renderice de manera descontrolada
         const fetchUsers = async () => { // funcion asincrona para la obtencion de datos, se consulta al servidor
-          const infoPaciente = await obtenerHistorialPacientes(); // obtiene los datos que estan registrados en el servidor 
+          const infoHistorial = await obtenerHistorialPacientes(); // obtiene los datos que estan registrados en el servidor 
          
-          setHistorialPacientes(infoPaciente); // se fijan los valores que se obtienen con infoPacientes, ahora los establecemos en setPacientes (pacientes)
+          setHistorialPacientes(infoHistorial); // se fijan los valores que se obtienen con infoHistorial, ahora los establecemos en setHistorialPacientes (HistorialPacientes)
      
         };
-        fetchUsers(); // 
-      }, []); //
+        fetchUsers(); 
+      }, []); 
     
         // Filtrar pacientes en base al término de búsqueda
-  const filteredPacientes = HistorialPacientes.filter((paciente) => paciente.NombrePaciente.toLowerCase().includes(Buscador.toLowerCase())
-    ); 
-                console.log(filteredPacientes);
-                console.log(Buscador);
+      const filteredPacientes = HistorialPacientes.filter((paciente) => paciente.NombrePaciente.toLowerCase().includes(Buscador.toLowerCase())
+        ); 
 
+    // "HistorialPacientes" es una lista que contiene a los pacientes
+    // con toLowerCase() y toLower convierte el nombre del paciente (ya registrado) a minúscula
+    // "Buscador.toLowerCase()" convierte el texto del buscador a minúsculas, para que sea compatible y se encuentre 
+    // includes() verifica si el nombre del paciente contiene el texto que se está buscando en Buscador. Si es así, el paciente será incluido en el nuevo array "filteredPacientes"
 
   return (
-    <div>
+    <div className='divHistorial'>
 
     <div className="container mt-5">
     <h1 className="mb-4">Historial de Pacientes</h1>
 
-    <input value={Buscador} onChange={(e) => setBuscador(e.target.value)} placeholder="Busca por nombre..." type="search" />
+    <input className='inputBuscador' value={Buscador} onChange={(e) => setBuscador(e.target.value)} placeholder="Busca por nombre..." type="search" />
     <br />
     <br />
 
@@ -66,7 +72,7 @@ function HistorialPacientes() {
             {filteredPacientes.map((paciente) => (
               <tr key={paciente.id}>
                 <td>{paciente.CedulaPaciente}</td>
-                <td>{paciente.NombrePaciente}</td>
+                <td>{paciente.NombrePaciente} </td>
                 <td>{paciente.FechaNacimientoPaciente}</td>
                 <td>{paciente.SexoPaciente}</td>
                 <td>{paciente.TelefonoPaciente}</td>

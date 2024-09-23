@@ -12,11 +12,10 @@ function NavegationAdmin() {
 
     const botonCerrarSesion = () => {
  
-        localStorage.removeItem('Autenticado');
-        navigate('/');
+        localStorage.removeItem('Autenticado'); // elimina localStorage, quita la autenticación
+        navigate('/'); // redirige a la página principal
 
-      
-    }
+    } // cierre del boton de Cerrar Sesion
 
   return (
     <div>
@@ -31,15 +30,15 @@ function NavegationAdmin() {
 
       <div className='divLinks'>
             <li className="nav-item">
-                <p className="nav-link" ><Link to= "/Register">Registro</Link></p>
+                <p className="nav-link" ><Link className='linkPrincipal' to= "/Register">Registro</Link></p>
             </li>
 
             <li className="nav-item">
-                <p className="nav-link"><Link to= "/Expediente">Expediente</Link></p>
+                <p className="nav-link"><Link className='linkPrincipal' to= "/Expediente">Expediente</Link></p>
             </li>
         
             <li className="nav-item">
-            <p className="nav-link"><Link to= "/Historial">Historial</Link></p>
+            <p className="nav-link"><Link className='linkPrincipal' to= "/Historial">Historial</Link></p>
             </li>
 
             <li className="nav-item">

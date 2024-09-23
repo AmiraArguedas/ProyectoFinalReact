@@ -1,5 +1,7 @@
 .textoAlianzas{
     font-size: larger;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 .divCards{
@@ -17,12 +19,14 @@
     border-radius: 10px;
 }
 
+
 .card-body{
-    background-color: rgb(171, 202, 102);
+    background-color: rgba(143, 214, 20, 0.815);
+    border-radius: 4px;
 }
 
 .CepiaFoto{
-    width: 60%;
+    width: 70%;
 }
 
 .FoodBankFoto{
@@ -61,5 +65,9 @@
     .textoAlianzas{
         width: 80%;
         margin: 4%;
+    }
+
+    .card{
+        margin: 5%;
     }
 }

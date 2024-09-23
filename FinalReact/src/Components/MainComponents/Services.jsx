@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../../Styles/Services.css"
+import "../../Styles/Services.css";
 
 function Services() {
   return (
-    <div>
-      <hr />     
+    <div> 
       <br /> 
           <p className='textoServices'>Estamos aquí para cuidar de tu salud de la manera más cercana y profesional. Estos son algunos de los servicios que ofrecemos:</p>
       <br />

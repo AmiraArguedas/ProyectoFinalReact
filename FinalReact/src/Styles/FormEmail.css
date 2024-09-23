@@ -55,6 +55,7 @@
     text-align: center;
     align-content: center;
     font-size: larger;
+
 }
 
 .botonEnviarForm{
@@ -75,7 +76,7 @@
     .divForm{
         display: grid;
         grid-template-columns: 1fr;
-        margin-left: 50px;
+        margin-left: 5%;
     }
 
 }

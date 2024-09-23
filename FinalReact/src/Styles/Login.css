@@ -1,22 +1,26 @@
 
-
 .divLogin{
     width: 30%;
     border-radius: 10px;
     width: 400px;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0px 8px 13px 5px rgba(0, 0, 0, 0.5)
+    box-shadow: 0px 8px 13px 5px rgba(0, 0, 0, 0.5);
+}
+
+.tituloLogin{
+    font-size: xx-large;
+    font-weight: 650;
 }
 
 .botonLogin{
-    background-color: rgb(148, 189, 61);
+    background-color:  rgba(143, 214, 20, 0.979);
     color: white;
     padding: 10px;
     border: 0.5px solid;
     border-radius: 6px;
-    font-weight: bolder;
-    font-size: 100%;
+    font-size: larger;
+    font-weight: bold;
     margin: 2%;
 }
 

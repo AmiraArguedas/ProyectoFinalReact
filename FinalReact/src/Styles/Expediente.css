@@ -1,3 +1,86 @@
 .divFormularioExpediente{
     width: 100%;
 }
+
+.textoExpediente{
+    margin: 2%;
+}
+
+.textArea{
+    align-content: center;
+}
+
+
+.inputExpediente{
+    margin: 10px;
+}
+
+.textMostrar{
+    color: red;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.textoNoHayPacientes{
+    color: red;
+    font-size: larger;
+    font-weight: 500;
+}
+
+.botonRegistrarPaciente{
+    background-color: rgb(66, 183, 42);
+    padding: 10px;
+    color: white;
+    border: 0.5px solid white;
+    border-radius: 6px;
+    font-weight: bolder;
+    font-size: larger;
+    margin: 2%;
+    margin-bottom: 20px;
+}
+
+.botonModificaPaciente{
+    background-color: rgb(8, 102, 255);
+    padding: 10px;
+    border: 0.5px solid;
+    border-radius: 6px;
+    font-weight: bolder;
+    font-size: 100%;
+    margin: 2%;
+}
+
+.botonEliminarPaciente{
+    background-color: rgb(255, 17, 0);
+    padding: 10px;
+    border: 0.5px solid white;
+    color: white;
+    border-radius: 6px;
+    font-weight: bolder;
+    font-size: 100%;
+    margin: 2%;
+}
+
+
+.botonCerrarModal{
+    background-color: rgb(116, 116, 116);
+    padding: 10px;
+    border: 0.5px solid white;
+    color: white;
+    border-radius: 6px;
+    font-weight: bolder;
+    font-size: large;
+    margin: 2%;
+}
+
+.botonAplicarModificacionModal{
+    background-color: rgb(66, 183, 42);
+    padding: 10px;
+    border: 0.5px solid white;
+    color: white;
+    border-radius: 6px;
+    font-weight: bolder;
+    font-size: large;
+    margin: 2%;
+}
+
+

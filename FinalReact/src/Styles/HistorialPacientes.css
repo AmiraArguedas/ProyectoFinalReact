@@ -1,0 +1,16 @@
+.inputBuscador{
+    outline: none; 
+}
+
+.table-striped{
+    margin-left: -80px;
+}
+  
+.table th, .table td {
+    padding: 10px; /* Aumenta el padding para dar más espacio */
+    text-align: left; /* Alinea el texto a la izquierda */
+    border: 1px solid #ddd; /* Bordes ligeros */
+    text-align: center;
+    align-content: center;
+}
+  

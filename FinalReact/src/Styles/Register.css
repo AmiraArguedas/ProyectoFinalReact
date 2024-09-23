@@ -1,14 +1,25 @@
+
+.divTotalRegistro{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 .divRegister{
-    width: 30%;
+    width: 60%;
     border-radius: 10px;
-    width: 400px;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0px 8px 13px 5px rgba(0, 0, 0, 0.5)
+    box-shadow: 0px 8px 13px 5px rgba(0, 0, 0, 0.5);
+}
+
+.h1Registro{
+    font-size: x-large;
+    font-weight: 700;
+
 }
 
 .botonRegister{
-    background-color: rgb(148, 189, 61);
+    background-color: rgba(143, 214, 20, 0.979);
     color: white;
     padding: 10px;
     border: 0.5px solid;
@@ -18,12 +29,56 @@
     margin: 2%;
 }
 
+.divTextoRegistro{
+    text-align: center;
+    align-content: center;
+}
+
+.textoP_Registro{
+    font-size: larger;
+    margin-left: 2%;
+    font-weight: 700;
+}
+
+.textoP_Registro2{
+    font-size: large;
+    margin-left: 2%;
+    text-decoration: underline;
+}
+
 .inputRegister{
     border-radius: 2px;
-    height: 30px;
-    width: 150px;
+    width: 60%;
     border: 0.5px solid;
     border-color: rgb(190, 190, 190);
     margin: 1%;
     font-family: Optima, sans-serif;
+    text-align: center;
+}
+
+.botonEliminarUsuarios{
+    background-color: white;
+    padding: 10px;
+    border: 0.5px solid red;
+    color: red;
+    border-radius: 6px;
+    font-weight: bolder;
+    font-size: 100%;
+    margin: 2%;
+}
+
+@media (min-width : 480px) and (max-width : 900px) {
+    .divTotalRegistro{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .divRegister{
+        width: 60%;
+        margin: 30px;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0px 8px 13px 5px rgba(0, 0, 0, 0.5);
+    }
 }
